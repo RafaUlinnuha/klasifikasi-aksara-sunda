@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-24 max-w-screen-lg mx-auto">
+        <div class="flex items-center justify-between">
+            <a href="/">
+                <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+            </a>
+            <h1 class="font-extrabold text-6xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] leading-snug">Aksara Ngalagena</h1>
+        </div>
+        <p class="text-right py-8">Aksara ngalagena adalah jenis aksara yang mewakili bunyi konsonan dan selalu dikombinasikan dengan bunyi vokal /a/ dalam struktur suku kata. Dalam aksara Sunda Kuno, terdapat total delapan belas jenis aksara ngalagena.</p>
+        <div class="grid grid-cols-4 pt-16">
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ba.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ba</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ca.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ca</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/da.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">da</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ga.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ga</h2>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 pt-12">
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ha.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ha</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ja.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ja</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ka.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ka</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/la.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">la</h2>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 pt-12">
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ma.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ma</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/na.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">na</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/nga.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">nga</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/nya.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">nya</h2>
+            </div>
+        </div>
+	</div>
+{% endblock %}

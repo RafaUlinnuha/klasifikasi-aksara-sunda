@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-24 max-w-screen-lg mx-auto">
+      <div class="relative">
+        <h1 class="absolute font-extrabold text-3xl md:text-6xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] z-50 md:leading-snug top-1/2 -translate-y-1/2">
+          Pengklasifikasian Citra <br> Aksara Ngalagena
+        </h1>  
+        <img src="{{url_for('static',filename='src/hero.png')}}" alt="img" width="640" height="378" class="relative block ml-auto max-w-lg w-full">
+      </div>
+    
+    <form class="block pt-24" action="/" method="post" enctype="multipart/form-data">
+      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none file:bg-[#F2ECBE]" aria-describedby="file_input_help" id="file" name="file" type="file" autocomplete="off" required>
+      <p class="mt-1 text-sm text-gray-500" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+      <button data-modal-target="default-modal" type="submit" value="submit" class="text-white bg-[#186F65] hover:bg-[#15635A] focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mt-4 mb-2 w-full">Prediksi Gambar</button>
+    </form>
+
+    <!-- Main modal -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div id="default-modal" tabindex="-1" aria-hidden="true" class="flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-900 bg-opacity-10">
+        <div class="relative p-4 w-full max-w-2xl max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+              <h3 class="text-xl font-semibold text-gray-900">
+                Hasil Prediksi
+              </h3>
+              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="default-modal">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+              <!-- <h1 class="font-medium text-lg">Pic</h1>
+              <p>{{ messages[2] }}</p> -->
+              <h1 class="font-medium text-lg">Label</h1>
+              <p>{{ messages[0] }}</p>
+              <h1 class="font-medium text-lg">Accuracy</h1>
+              <p>{{ messages[1] }}</p>  
+              <button data-modal-hide="default-modal" type="submit" value="submit" class="text-black bg-[#E2C799] rounded-full hover:bg-[#D9B67B] focus:outline-none font-medium text-sm px-5 py-2.5 text-center me-2 mt-4 mb-2 w-full">Coba Lagi</button>  
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endwith %}
+      
+
+    <div class="grid grid-cols-1 md:grid-cols-2 pt-12">
+      <img src="{{url_for('static',filename='src/about.png')}}" alt="about" class="w-[75%]">
+      <div class="container my-auto">
+        <h1 class="font-extrabold text-4xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] leading-snug">Tentang</h1>
+        <p class="pt-6">KAN (Klasifikasi Aksara Ngalagena) adalah aplikasi yang menggunakan teknologi pengolahan citra dan kecerdasan buatan untuk mengklasifikasikan citra aksara Sunda khususnya aksara ngalagena pada daun lontar. Aplikasi ini melibatkan proses pelatihan model dengan dataset AMADI, memungkinkan pengguna mengunggah citra daun lontar dan melihat hasil pengenalan aksara ngalagena pada daun lontar.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 pt-8">
+      <div class="container my-auto">
+        <h1 class="font-extrabold text-4xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] leading-snug">Dataset AMADI</h1>
+        <p class="pt-6">Dataset yang digunakan dibuat melalui kegiatan penelitian Ancient Manuscript Digitization and Indexation (AMADI). Dataset tersebut berisi naskah lontar Sunda yang ditulis tangan, terdiri dari 66 halaman yang berasal dari 27 koleksi naskah lontar Sunda dari abad ke-15. Pengumpulan dataset ini melibatkan naskah-naskah dari Garut, Jawa Barat, Indonesia. Keberadaan dataset Sunda ini memiliki nilai signifikan, terutama dalam konteks pengenalan karakter/simbol.</p>
+      </div>
+      <div class="flex">
+        <img src="{{url_for('static',filename='src/research.png')}}" alt="about" class="ml-auto w-[75%]">
+      </div>
+    </div>
+
+    <div class="container pt-20">
+      <h1 class="font-extrabold text-right text-4xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] leading-snug">Aksara Sunda</h1>
+      <p class="pt-6 text-right">Aksara Sunda merupakan hasil ortografi masyarakat Sunda yang telah berkembang selama 5 abad, mewarisi tradisi tulisan dari masa lampau hingga kini. Secara umum, lambang-lambang aksara Sunda Kuno dapat dikelompokkan ke dalam kategori aksara swara, aksara ngalagena, dan aksara khusus.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-12">
+        <div class="max-w-sm p-6 bg-[#186F65] border border-gray-200 rounded-lg shadow">
+          <a href="#">
+            <h5 class="mb-2 text-2xl text-white">Aksara Swara</h5>
+          </a>
+          <p class="mb-3 font-normal text-white">Aksara swara adalah jenis aksara dalam sistem tulisan silabis yang memiliki lima bunyi vokal dalam aksara Sunda Kuno.</p>
+          <a href="/aksara-swara" class="inline-flex items-center mt-4 px-6 py-3 text-sm font-medium text-center text-black bg-[#E2C799] rounded-full hover:bg-[#D9B67B] focus:outline-none">
+            Pelajari Lebih Jauh
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="max-w-sm p-6 bg-[#186F65] border border-gray-200 rounded-lg shadow">
+          <a href="#">
+            <h5 class="mb-2 text-2xl text-white">Aksara Ngalagena</h5>
+          </a>
+          <p class="mb-3 font-normal text-white">Aksara ngalagena adalah jenis aksara yang mewakili bunyi konsonan, terdiri dari delapan belas karakter.</p>
+          <a href="/aksara-ngalagena" class="inline-flex items-center mt-4 px-6 py-3 text-sm font-medium text-center text-black bg-[#E2C799] rounded-full hover:bg-[#D9B67B] focus:outline-none">
+            Pelajari Lebih Jauh
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="max-w-sm p-6 bg-[#186F65] border border-gray-200 rounded-lg shadow">
+          <a href="#">
+            <h5 class="mb-2 text-2xl text-white">Aksara Khusus</h5>
+          </a>
+          <p class="mb-3 font-normal text-white">Aksara khusus memperlihatkan karakteristik uniknya melalui keberadaan empat macamnya.</p>
+          <a href="#" class="inline-flex items-center mt-4 px-6 py-3 text-sm font-medium text-center text-black bg-[#E2C799] rounded-full hover:bg-[#D9B67B] focus:outline-none">
+            Pelajari Lebih Jauh
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-20">
+      <h1 class="font-extrabold text-4xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] leading-snug">Cara Kerja</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6 text-right">
+        <div class="container">
+          <h1 class="text-2xl font-medium">1. Upload Foto</h1>
+          <p class="pt-2">Pertama, unggah foto daun lontar yang ingin dianalisis. Sistem ini akan menggunakan teknologi pengolahan citra dan kecerdasan buatan untuk mengidentifikasi aksara Sunda pada citra tersebut, memanfaatkan delapan belas karakteristik yang terkandung dalam aksara ngalagena.</p>
+        </div>
+        <div class="container">
+          <h1 class="text-2xl font-medium">2. Mengakses hasil</h1>
+          <p class="pt-2">Setelah proses analisis selesai, akses hasilnya dengan mudah. Aplikasi akan menampilkan hasil pengenalan aksara Sunda pada daun lontar, memungkinkan pengguna untuk melihat dan memahami informasi yang telah diperoleh.</p>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

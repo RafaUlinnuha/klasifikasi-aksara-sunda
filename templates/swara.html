@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-24 max-w-screen-lg mx-auto">
+        <div class="flex items-center justify-between">
+            <a href="/">
+                <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+            </a>
+            <h1 class="font-extrabold text-6xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] leading-snug">Aksara Swara</h1>
+        </div>
+        <p class="text-right py-8">Aksara swara adalah jenis aksara dalam sistem tulisan silabis yang memiliki lima bunyi vokal dalam aksara Sunda Kuno. Dalam penggunaannya, varian-varian lambang aksara tersebut seringkali dipertukarkan dengan bebas tanpa mengubah nilai bunyi vokal yang tetap. Terdapat empat aksara swara, yaitu /a/, /é/, /i/, dan /o/. Contoh aksara swara dalam dataset AMADI yaitu seperti gambar dibawah.</p>
+        <div class="grid grid-cols-4 pt-16">
+            <div class="h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/swara/a.png')}}" alt="img" width="160">
+                <h2 class="pt-4 text-2xl">a</h2>
+            </div>
+            <div class="h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/swara/e.png')}}" alt="img" width="160">
+                <h2 class="pt-4 text-2xl">é</h2>
+            </div>
+            <div class="h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/swara/i.png')}}" alt="img" width="160">
+                <h2 class="pt-4 text-2xl">i</h2>
+            </div>
+            <div class="h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/swara/o.png')}}" alt="img" width="160">
+                <h2 class="pt-4 text-2xl">o</h2>
+            </div>
+        </div>
+	</div>
+{% endblock %}
