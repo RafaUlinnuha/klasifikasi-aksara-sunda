@@ -1,7 +1,8 @@
 from flask import Flask
+import os
 
-# Specify the folder where uploaded files will be stored
-UPLOAD_FOLDER = '../web/uploads'
+# Set up the upload folder
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'uploads')
 
 # Create a Flask web application instance
 app = Flask(__name__)

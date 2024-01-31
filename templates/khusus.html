@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-24 max-w-screen-lg mx-auto">
+        <div class="flex items-center justify-between">
+            <a href="/">
+                <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+            </a>
+            <h1 class="font-extrabold text-6xl text-[#B2533E] underline underline-offset-8 decoration-[#F2ECBE] decoration-[12px] leading-snug">Aksara Khusus</h1>
+        </div>
+        <p class="text-right py-8">Aksara khusus memiliki karakteristik unik, yakni tidak mengandung vokal /a/ dalam pengucapan silabisnya. Terdapat empat macam aksara khusus, yang melibatkan aksara le/leu yang akrab disebut pangwilet. Selain itu, ada aksara re/reu yang disebut pangreureu.</p>
+        <div class="grid grid-cols-4 pt-16">
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/khusus/leu.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">le/leu</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ca.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">ro</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/khusus/reu.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">re/reu</h2>
+            </div>
+            <div class="max-h-96 mx-auto text-center">
+                <img src="{{url_for('static',filename='src/ngalagena/ga.png')}}" alt="img" width="220" height="160">
+                <h2 class="pt-4 text-2xl">tra</h2>
+            </div>
+        </div>
+	</div>
+{% endblock %}

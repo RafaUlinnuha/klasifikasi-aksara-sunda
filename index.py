@@ -18,6 +18,10 @@ def aksara_swara():
 def aksara_ngalagena():
     return render_template('ngalagena.html')
 
+@app.route('/aksara-khusus')
+def aksara_khusus():
+    return render_template('khusus.html')
+
 @app.route('/', methods=['POST'])
 def submit_file():
     if request.method == 'POST':
@@ -30,7 +34,7 @@ def submit_file():
             return redirect(request.url)
         if file:
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             getPrediction(filename)
             label, acc = getPrediction(filename)
             flash(label, 'class')
@@ -39,4 +43,4 @@ def submit_file():
             return redirect('/')
         
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0",port=5000)
