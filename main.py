@@ -42,7 +42,7 @@ def getPrediction(filename):
     model = create_model(input_shape, num_classes, optim, fine_tune=12)
     
     # Load the weights into the model
-    model.load_weights("../VGG19/Dropout 0.5/tl_model_v18.weights.best.hdf5")
+    model.load_weights("tl_model_v18.weights.best.hdf5")
     
     image = load_img('./static/uploads/'+filename, target_size=(70, 70))
     image = img_to_array(image)

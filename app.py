@@ -2,7 +2,7 @@ from flask import Flask
 import os
 
 # Set up the upload folder
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'static', 'uploads')
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
 
 # Create a Flask web application instance
 app = Flask(__name__)
