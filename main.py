@@ -48,12 +48,9 @@ def getPrediction(filename):
     image = img_to_array(image)
     image /= 255.0
     image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
-    # image = preprocess_input(image)
     
     # Use the model directly for prediction (without assigning it to loaded_model)
     yhat = model.predict(image)
-    
-    # json_yhat = json.dumps({'yhat': (yhat*100).tolist()})
     
     # Use the class labels directly
     class_labels = ["ba", "ca", "da", "ga", "ha", "ja", "ka", "la", "ma", "na", "nga", "nya", "pa", "ra", "sa", "ta", "wa", "ya"]
