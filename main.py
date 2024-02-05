@@ -5,6 +5,7 @@ from keras.optimizers import Adam
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Flatten, Dense, Dropout
 from tensorflow.keras.applications import VGG19
+from app import UPLOAD_FOLDER
 import json
 
 def create_model(input_shape, num_classes, optimizer='adam', fine_tune=0):    
@@ -44,7 +45,7 @@ def getPrediction(filename):
     # Load the weights into the model
     model.load_weights("tl_model_v18.weights.best.hdf5")
     
-    image = load_img('./static/uploads/'+filename, target_size=(70, 70))
+    image = load_img(UPLOAD_FOLDER+filename, target_size=(70, 70))
     image = img_to_array(image)
     image /= 255.0
     image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
